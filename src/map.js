@@ -7,9 +7,8 @@ export function initMap(ymaps, containerId) {
     center: [55.76, 37.64],
     controls: [],
     zoom: 10
-  });
-
-  const objectManager = new ymaps.ObjectManager({
+  }),
+    objectManager = new ymaps.ObjectManager({
     clusterize: true,
     gridSize: 64,
     clusterIconLayout: 'default#pieChart',
@@ -20,6 +19,7 @@ export function initMap(ymaps, containerId) {
   });
 
   objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+	myMap.geoObjects.add(objectManager);
 
   loadList().then(data => {
     objectManager.add(data);
