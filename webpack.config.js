@@ -11,7 +11,7 @@ module.exports = {
   devServer: {
     contentBase: PUBLIC_PATH,
     compress: true,
-    port: 5000,
+    port: 9000,
     before: initBackendStub
   }
 };

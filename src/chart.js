@@ -2,8 +2,8 @@ import {Chart} from "chart.js";
 
 function getColor(isActive, alpha = 1) {
 	return isActive
-		? "rgba(54, 162, 235, ${alpha})"
-		: "rgba(255, 99, 132, ${alpha})";
+		? `rgba(54, 162, 235, ${alpha})`
+		: `rgba(255, 99, 132, ${alpha})`;
 }
 
 function getLabel(el, i, data) {
@@ -17,8 +17,10 @@ function getLabel(el, i, data) {
 
 export function createChart(container, data, isActive) {
 	const ctx = container.getContext("2d");
+
 	const borderColor = getColor(isActive);
 	const backgroundColor = getColor(isActive, 0.5);
+
 	const chart = new Chart(ctx, {
 		type: "line",
 		data: {
@@ -38,9 +40,10 @@ export function createChart(container, data, isActive) {
 			},
 			scales: {
 				xAxes: [{ticks: {display: false}}],
-				yAxes: [{ticks: {beginAtZero: true, max: 0}}]
+				yAxes: [{ticks: {beginAtZero: true}}]
 			}
 		}
 	});
+
 	return chart;
 }

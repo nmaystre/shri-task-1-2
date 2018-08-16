@@ -18,7 +18,7 @@ export function getDetailsContentLayout(ymaps) {
 	      </div>
 	      <div class="details-info">
           <div class="details-label">connections</div>
-          <canvas class="details-chart" width="270" height="100" />
+          <canvas class="details-chart" width="270" height="100"/>
 	      </div>
 	  	{% else %}
 	      <div class="details-info">
